@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Lighter Studio Wrapper</title>
+    <style>
+      .godaddy-full-wrapper {
+          position: relative;
+          width: 100%;
+          min-height: 85vh;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: #070712;
+          overflow: hidden;
+          margin: 0 auto;
+          padding: 30px 0;
+      }
+      .stars-seamless {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 200%;
+          pointer-events: none;
+          background-image: 
+              radial-gradient(2px 2px at 20px 30px, #ffffff, rgba(0,0,0,0)),
+              radial-gradient(2px 2px at 40px 70px, #00f3ff, rgba(0,0,0,0)),
+              radial-gradient(1px 1px at 90px 40px, #ffffff, rgba(0,0,0,0)),
+              radial-gradient(2px 2px at 160px 120px, #ff2a85, rgba(0,0,0,0));
+          background-repeat: repeat;
+          background-size: 300px 300px;
+          opacity: 0.75;
+          animation: smoothTwinkle 20s linear infinite;
+          z-index: 1;
+      }
+      @keyframes smoothTwinkle {
+          0% { transform: translateY(0); }
+          100% { transform: translateY(-300px); }
+      }
+      .studio-iframe-container {
+          position: relative;
+          z-index: 10;
+          width: 100%;
+          max-width: 500px;
+          height: 800px;
+          border-radius: 16px;
+          overflow: hidden;
+          box-shadow: 0 0 40px rgba(255, 42, 133, 0.4), 0 0 20px rgba(0, 243, 255, 0.3);
+          border: 2px solid #00f3ff;
+          background: rgba(7, 7, 18, 0.85);
+      }
+      .studio-iframe-container iframe {
+          width: 100%;
+          height: 100%;
+          border: none;
+      }
+    </style>
+</head>
+<body style="margin: 0; background-color: #070712;">
+    <div class="godaddy-full-wrapper">
+        <div class="stars-seamless"></div>
+        <div class="studio-iframe-container">
+            <iframe src="https://inkdown-boop.github.io/lighter-wrap-studio-app/" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
+            </iframe>
+        </div>
+    </div>
+</body>
+</html>
